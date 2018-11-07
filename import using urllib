@@ -50,3 +50,43 @@ print(xl.keys())
 
 # Print the head of the first sheet (using its name, NOT its index)
 print(xl['1700'].head())
+
+EXERCISE 4
+from urllib.request import urlopen, Request
+
+# Specify the url
+url = "http://www.datacamp.com/teach/documentation"
+
+# This packages the request: request
+request = Request(url)
+
+# Sends the request and catches the response: response
+response = urlopen(request)
+
+# Print the datatype of response
+print(type(response))
+
+# Be polite and close the response!
+response.close()
+
+EXERCISE 5
+# Import packages
+from urllib.request import urlopen, Request
+
+# Specify the url
+url = "http://www.datacamp.com/teach/documentation"
+
+# This packages the request
+request = Request(url)
+
+# Sends the request and catches the response: response
+response = urlopen(request)
+
+# Extract the response: html
+html = response.read()
+
+# Print the html
+print(html)
+
+# Be polite and close the response!
+response.close()
